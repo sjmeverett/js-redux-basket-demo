@@ -1,0 +1,135 @@
+
+$bootstrap-sass-asset-helper: true;
+$fa-font-path: "~font-awesome/fonts";
+
+@import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/scss/font-awesome';
+@import '~bootstrap/scss/variables';
+
+
+.product-card {
+  width: 262px;
+}
+
+.page {
+  display: flex;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  padding: 20px;
+}
+
+.basket-sidebar {
+  flex: 0 0 auto;
+  width: 400px;
+  transition: width 0.25s ease;
+  background: $gray-lighter;
+  overflow: hidden;
+  background: $brand-primary;
+  color: #fff;
+
+  &.closed {
+    width: 50px;
+
+    .expand-icon {
+      display: inline-block !important;
+    }
+
+    .collapse-icon {
+      display: none;
+    }
+  }
+
+  .content {
+    margin-left: 50px;
+    background: $gray-lighter;
+    width: 350px;
+    height: 100%;
+    color: #000;
+  }
+
+  .drawer {
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 25px 25px;
+    line-height: 50px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+
+    .title {
+      margin-left: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      height: 50px;
+      width: 150px;
+
+      .expand-icon {
+        display: none;
+        transform: rotate(-90deg);
+      }
+
+      .collapse-icon {
+        transform: rotate(90deg);
+      }
+    }
+
+    .summary {
+      margin-left: 30px;
+      height: 50px;
+      flex: 1 0 auto;
+      color: $gray-lighter;
+
+      .badge {
+        font-size: 1.1rem;
+        background: lighten($brand-primary, 10%);
+      }
+    }
+  }
+
+  .basket-list {
+    .empty {
+      font-size: 0.8rem;
+      color: $gray-light;
+      text-align: center;
+      padding: 50px 20px 20px 20px;
+      margin: 0;
+    }
+
+    .btn-link {
+      color: $gray-light;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .btn-empty {
+      margin-top: 50px;
+      float: right;
+    }
+
+    .basket-item {
+      background: white;
+      color: black;
+      border-bottom: 1px solid $gray-lighter;
+      padding: 20px;
+      overflow: auto;
+      position: relative;
+
+      img {
+        float: left;
+        width: 70px;
+        margin: 0 15px 10px 0;
+      }
+
+      .bottom-bar {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
